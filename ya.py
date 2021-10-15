@@ -1,5 +1,4 @@
 import requests
-from pprint import pprint
 import os
 import PySimpleGUI as sg
 import time
@@ -8,9 +7,8 @@ import time
 class Yandex:
 
     def __init__(self, ya_token):
-        # with open('ya_token.txt', 'r') as file:
-        #     self.ya_token = file.read().strip()
-        self.ya_token = ya_token
+        with open('ya_token.txt', 'r') as file:
+            self.ya_token = file.read().strip()
         self.url = 'https://cloud-api.yandex.net/v1/disk/resources'
 
     def get_headers(self):
